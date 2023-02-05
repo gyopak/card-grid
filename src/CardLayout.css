@@ -1,5 +1,6 @@
-.CardLayout>div {
+.CardLayout > div {
   border-radius: 5px;
+  position: relative;
 }
 
 .Header {

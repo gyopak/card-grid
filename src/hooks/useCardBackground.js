@@ -1,4 +1,4 @@
-const BASE_URL = 'rgba(0, 0, 0, .30) url("https://picsum.photos/id/';
+const BASE_URL = 'rgba(0, 0, 0, .45) url("https://picsum.photos/id/';
 
 // simple mock to grab darkened filler pictures by id and size
 export default (id, page, size) => (

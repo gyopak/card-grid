@@ -1,3 +1,31 @@
 .Card {
   background-size: cover !important;
+  transition: all 0.5s ease-in-out;
+}
+
+.Caret {
+  font-size: 3rem;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  margin: 0;
+}
+
+.Card:hover {
+  background: var(--active-bg-color) !important;
+}
+
+.Card > h2 {
+  font-size: 1.25rem;
+  margin: 0.75rem;
+}
+
+.Card > h3 {
+  visibility: hidden;
+  font-size: 1.125rem;
+  margin: 0.75rem;
+}
+
+.Card:hover > h3 {
+  visibility: visible;
 }

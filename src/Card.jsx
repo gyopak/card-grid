@@ -1,8 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
 import useCardBackground from './hooks/useCardBackground'
-import './Card.css'
 import useCardSize from './hooks/useCardSize';
-
+import './Card.css'
 
 function Card({ id, page, data}) {
   const { cardRef, size } = useCardSize();
@@ -18,7 +16,9 @@ function Card({ id, page, data}) {
         background,
       }}
     >
-
+      <h2>{data?.name}</h2>
+      <h3>{data?.tagline}</h3>
+      <p className="Caret">›</p>
     </div>
   )
 }
