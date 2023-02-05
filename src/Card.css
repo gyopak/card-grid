@@ -21,11 +21,22 @@
 }
 
 .Card > h3 {
-  visibility: hidden;
+  color: transparent;
   font-size: 1.125rem;
   margin: 0.75rem;
+  transition: all 0.5s ease-in-out;
 }
 
 .Card:hover > h3 {
-  visibility: visible;
+  color: var(---main-text-color);
+}
+
+@media only screen and (max-width: 800px) {
+  .Card > h2 {
+    font-size: 1rem;
+  }
+  
+  .Card > h3 {
+    font-size: 0.7rem;
+  }
 }
