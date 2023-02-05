@@ -1,6 +1,7 @@
 import Card from './Card'
 import cx from 'classnames'
 import './CardLayout.css'
+import { useGetCardContentByPageQuery } from './features/cardContentApiSlice';
 
 const getHeader = id => [
   'Connect people & spaces',
@@ -11,7 +12,7 @@ const getHeader = id => [
 ][id % 5];
 
 function CardLayout({ page = 0, isLastPage, setLastPage }) {
-  const ids = [...Array(7).keys()]
+  const { data } = useGetCardContentByPageQuery(page);
   const onNextClick = () => {
     setLastPage(page + 1)
     setTimeout(() => {
@@ -22,12 +23,20 @@ function CardLayout({ page = 0, isLastPage, setLastPage }) {
     }, 250)
   };
 
+  const ids = [...Array(7).keys()]
   return (
     <div className="CardLayout">
       <div className="TitleCard">
         <h1 className="Header">{getHeader(page)}</h1>
       </div>
-      {ids.map(id => <Card key={`${page}-${id}`} id={id} page={page} />)}
+      {ids.map(id => (
+        <Card
+          key={`${page}-${id}`}
+          id={id}
+          data={data?.[id]}
+          page={page}
+        />
+      ))}
       <div className="ShowMore">
         <button
           className={cx({ LastButton: isLastPage })}
