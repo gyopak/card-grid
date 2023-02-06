@@ -5,7 +5,6 @@ import './Card.css'
 function Card({ id, page, data}) {
   const { cardRef, size } = useCardSize();
   const background = useCardBackground(id, page, size);
-  console.log(data)
 
   return (
     <div

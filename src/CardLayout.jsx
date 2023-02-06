@@ -42,7 +42,7 @@ function CardLayout({ page = 0, isLastPage, setLastPage }) {
           className={cx({ LastButton: isLastPage })}
           onClick={onNextClick}
         >
-          show more
+          Show more
         </button>
       </div>
     </div>
